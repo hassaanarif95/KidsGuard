@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KidsGuard - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #6dd5fa, #2980b9);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-box {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background: #2980b9;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: #1f6391;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter Username" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+    function login() {
+      // Filhal ye simple redirect karega
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
