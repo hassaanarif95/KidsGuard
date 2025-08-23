@@ -7,12 +7,12 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      background: #eef3f9;
       margin: 0;
       padding: 0;
-      background: #f0f2f5;
     }
     header {
-      background: #007bff;
+      background: #4CAF50;
       color: white;
       padding: 15px;
       text-align: center;
@@ -23,58 +23,35 @@
     .card {
       background: white;
       padding: 20px;
-      margin: 10px 0;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
     }
-    button {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #c82333;
+    .card h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Welcome to KidsGuard Dashboard</h1>
+    <h1>KidsGuard Dashboard</h1>
   </header>
 
   <div class="container">
     <div class="card">
-      <h2>Child Location</h2>
-      <p>📍 Karachi, Pakistan (demo)</p>
+      <h3>📱 Child’s Device Location</h3>
+      <p>Location tracking will be shown here.</p>
     </div>
 
     <div class="card">
-      <h2>Screen Time</h2>
-      <p>3 hours 15 minutes today</p>
+      <h3>🌐 Browsing Activity</h3>
+      <p>Websites visited will be shown here.</p>
     </div>
 
     <div class="card">
-      <h2>App Usage</h2>
-      <ul>
-        <li>YouTube - 1 hr</li>
-        <li>WhatsApp - 45 min</li>
-        <li>Instagram - 30 min</li>
-      </ul>
+      <h3>⏳ Screen Time</h3>
+      <p>Daily usage statistics will be displayed here.</p>
     </div>
-
-    <button onclick="logout()">Logout</button>
   </div>
-
-  <script>
-    function logout() {
-      alert("Logged out successfully!");
-      window.location.href = "login.html"; // back to login
-    }
-  </script>
-
 </body>
 </html>
