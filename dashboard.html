@@ -2,77 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KidsGuard - Dashboard</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background: #4facfe;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      padding: 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 15px 0;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-    }
-    .logout {
-      background: red;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
-      float: right;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="header">
-    <h2>📊 KidsGuard Dashboard</h2>
-    <button class="logout" onclick="logout()">Logout</button>
-  </div>
-
-  <div class="container">
-    <div class="card">
-      <h3>Welcome, <span id="userName"></span> 👋</h3>
-      <p>Here you can monitor your child’s activities.</p>
-    </div>
-
-    <div class="card">
-      <h3>📱 Mobile Usage</h3>
-      <p>Daily Screen Time: <b>2 hours</b></p>
-      <p>Most Used App: <b>YouTube</b></p>
-    </div>
-
-    <div class="card">
-      <h3>🌐 Browsing History</h3>
-      <ul>
-        <li>www.kidsgames.com</li>
-        <li>www.learningapp.com</li>
-        <li>www.youtube.com</li>
-      </ul>
-    </div>
+  <div class="dashboard">
+    <h1>Welcome to Dashboard</h1>
+    <p id="welcome"></p>
+    <button onclick="logout()">Logout</button>
   </div>
 
   <script>
-    // check if user is logged in
-    const loggedInUser = localStorage.getItem("loggedInUser");
-
-    if(!loggedInUser) {
-      window.location.href = "index.html";
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      window.location.href = "index.html"; // Agar login nahi kiya to redirect
     } else {
-      document.getElementById("userName").innerText = loggedInUser;
+      document.getElementById("welcome").innerText = "Logged in as: " + user;
     }
 
     function logout() {
