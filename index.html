@@ -3,54 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parent Login</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      margin: 0;
-    }
-    .login-container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-      width: 300px;
-      text-align: center;
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #2575fc;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #1a5bcc;
-    }
-    .error {
-      color: red;
-      margin-top: 10px;
-      display: none;
-    }
-  </style>
+  <title>KidsGuard - Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="login-container">
@@ -58,21 +12,9 @@
     <input type="text" id="username" placeholder="Enter Username">
     <input type="password" id="password" placeholder="Enter Password">
     <button onclick="login()">Login</button>
-    <p id="error-message" class="error">Invalid username or password!</p>
+    <p id="error-message" style="color:red; display:none;">Invalid Username or Password!</p>
   </div>
 
-  <script>
-    function login() {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const errorMsg = document.getElementById("error-message");
-
-      if (username === "parent1" && password === "1234") {
-        window.location.href = "dashboard.html"; // ✅ Redirect to dashboard
-      } else {
-        errorMsg.style.display = "block"; // ❌ Show error
-      }
-    }
-  </script>
+  <script src="login.js"></script>
 </body>
 </html>
