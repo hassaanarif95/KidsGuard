@@ -2,81 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KidsGuard - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent Login</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #4facfe, #00f2fe);
       display: flex;
-      height: 100vh;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      margin: 0;
     }
-    .login-box {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
-      text-align: center;
+    .login-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
       width: 300px;
+      text-align: center;
     }
-    h2 { margin-bottom: 20px; }
+    h2 {
+      margin-bottom: 20px;
+    }
     input {
       width: 90%;
       padding: 10px;
-      margin: 8px 0;
+      margin: 10px 0;
+      border-radius: 8px;
       border: 1px solid #ccc;
-      border-radius: 6px;
     }
     button {
-      background: #4facfe;
-      border: none;
-      padding: 10px;
       width: 100%;
-      border-radius: 6px;
+      padding: 10px;
+      background: #2575fc;
+      border: none;
+      border-radius: 8px;
       color: white;
       font-size: 16px;
       cursor: pointer;
     }
     button:hover {
-      background: #007bff;
+      background: #1a5bcc;
     }
     .error {
       color: red;
-      font-size: 14px;
       margin-top: 10px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
+  <div class="login-container">
     <h2>Parent Login</h2>
     <input type="text" id="username" placeholder="Enter Username">
     <input type="password" id="password" placeholder="Enter Password">
     <button onclick="login()">Login</button>
-    <p class="error" id="errorMsg"></p>
+    <p id="error-message" class="error">Invalid username or password!</p>
   </div>
 
   <script>
-    // Multiple parent accounts
-    const users = [
-      { username: "parent1", password: "12345" },
-      { username: "parent2", password: "67890" },
-      { username: "parent3", password: "abcde" }
-    ];
-
     function login() {
-      const uname = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const errorMsg = document.getElementById("error-message");
 
-      const found = users.find(u => u.username === uname && u.password === pass);
-
-      if(found) {
-        // save login info to browser
-        localStorage.setItem("loggedInUser", uname);
-        window.location.href = "dashboard.html";
+      if (username === "parent1" && password === "1234") {
+        window.location.href = "dashboard.html"; // ✅ Redirect to dashboard
       } else {
-        document.getElementById("errorMsg").innerText = "Invalid Username or Password!";
+        errorMsg.style.display = "block"; // ❌ Show error
       }
     }
   </script>
